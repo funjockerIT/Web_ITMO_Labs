@@ -1,0 +1,429 @@
+/*
+* {
+    position: relative;
+    background: rgba(169, 169, 169, 0.1);
+    box-shadow: inset 0 0 0 1px darkgrey;
+}
+
+*::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 0;
+    left: -3px;
+    left: auto;
+
+    padding: 2px 5px;
+
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    font-family: "Courier New", monotype;
+    color: white;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    background: darkgray;
+}
+
+body > * {
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 0 4px red;
+}
+
+body > *::before {
+    color: white;
+    background: red;
+}
+
+body > * > * {
+    background: rgba(255, 165, 0, 0.1);
+    box-shadow: 0 0 0 2px orange;
+}
+
+body > * > *::before {
+    color: white;
+    background: orange;
+}
+
+body > * > * > * {
+    background: rgba(255, 255, 0, 0.1);
+    box-shadow: 0 0 0 1px yellow;
+}
+
+body > * > * > *::before {
+    color: black;
+    background: yellow;
+}
+
+body > * > * > * > * {
+    background: rgba(0, 128, 0, 0.1);
+    box-shadow: 0 0 0 1px green;
+}
+
+body > * > * > * > *::before {
+    color: white;
+    background: green;
+}
+
+body > * > * > * > * > * {
+    background: rgba(0, 0, 255, 0.1);
+    box-shadow: inset 0 0 0 1px blue;
+}
+
+body > * > * > * > * > *::before {
+    color: white;
+    background: blue;
+}
+
+body > * > * > * > * > * > * {
+    background: rgba(148, 0, 211, 0.1);
+    box-shadow: inset 0 0 0 1px darkviolet;
+}
+
+body > * > * > * > * > * > *::before {
+    color: white;
+    background: darkviolet;
+}
+
+
+header,
+main,
+footer {
+    box-shadow: 0 0 0 4px red;
+}
+
+header::before,
+main::before,
+footer::before {
+    right: auto;
+    left: 0;
+    z-index: 1;
+
+    font-size: 20px;
+    line-height: 20px;
+}
+
+header::before {
+    content: "header";
+}
+
+main::before {
+    content: "main";
+}
+
+footer::before {
+    content: "footer";
+}
+
+nav,
+section,
+article,
+aside {
+    box-shadow: 0 0 0 2px orange;
+}
+
+nav::before,
+section::before,
+article::before,
+aside::before {
+    right: 0;
+    left: auto;
+    z-index: 1;
+
+    font-size: 16px;
+    line-height: 16px;
+}
+
+nav::before {
+    content: "nav";
+}
+
+section::before {
+    content: "section";
+}
+
+article::before {
+    content: "article";
+}
+
+aside::before {
+    content: "aside";
+}
+
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    content: "h";
+    right: auto;
+    left: 0;
+    z-index: 1;
+}
+
+ul::before,
+ol::before {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+ul::before {
+    content: "ul";
+}
+
+ol::before {
+    content: "ol";
+}
+
+form::before {
+    content: "form";
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    z-index: 1;
+}
+
+p::before {
+    content: "p";
+    right: auto;
+    left: 0;
+}
+/* Общие стили */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 100px;
+}
+
+.header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+pre, code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+    background-color: #f4f4f4;
+}
+
+.logo__image {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.header__title {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.header__nav {
+    margin-top: 0;
+}
+
+.header__nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header__nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+.header__nav-list a:hover {
+    text-decoration: underline;
+}
+
+.about, .projects, .contact{
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.about__title, .projects__title, .contact__title {
+    text-align: center;
+}
+
+.projects__item {
+    margin-bottom: 20px;
+}
+
+.projects__image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Форма */
+.contact {
+    padding-bottom: 100px;
+}
+.contact__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__input, .contact__textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact__button {
+    padding: 10px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact__button:hover {
+    background-color: gray;
+}
+
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.ascll-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ascll-block {
+    width: 300px;
+    height: 200px;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre;
+    overflow: auto;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.code-example {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    text-align: left;
+    border: 5px solid #353434;
+    background-color: #c1c1c1;
+    border-radius: 5px;
+    font-family: "Courier New", "Courier", monospace;
+    color: #423a44;
+    text-transform: capitalize;
+}
+
+/* Таблица */
+.table__example {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 14px
+}
+
+th {
+    background-color: #423a44;
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #f9f9f9; /* Нечётные строки */
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        display: block;
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+}
+

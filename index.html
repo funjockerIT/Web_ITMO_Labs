@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Лабораторная работа - стили CSS" />
+    <meta name="keywords" content="Стасенко" />
+    <title>Лабораторная работа 2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+              src="images/logo.png"
+              alt="Логотип проекта"
+              class="logo__image"
+      />
+      <h1 class="header__title">Моя страница с CSS</h1>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about" class="about">
+        <h2 class="about__title">Обо мне</h2>
+        <p class="about__text">
+          Привет! Я изучаю веб-разработку и практикую создание сайтов с
+          использованием HTML и CSS.
+        </p>
+        <p> Контактная информация:</p>
+        <ul>
+          <li>8-888-888-88-88</li>
+          <li>mail@mail.ru</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2 class="projects__title">Мои проекты</h2>
+        <div class="projects__item">
+          <h3>Проект "БУБЛЕСОРТ"</h3>
+          <img
+            src="images/project1.jpg"
+            alt="Пример проекта 1"
+            class="projects__image"
+          />
+          <p>Bubble sort, also referred to as comparison sort, is a simple sorting algorithm that repeatedly goes through the list,
+            compares adjacent elements and swaps them if they are in the wrong order. This is the simplest algorithm and inefficient
+            at the same time. Yet, it is very much necessary to learn about it as it represents the basic foundations of sorting.</p>
+          <div class="code-example">
+            <pre><code>
+            Implementation of Bubble sort in C++
+            #include &lt;iostream&gt;
+            #include &lt;vector&gt;
+
+            using namespace std;
+
+            void BubbleSort (vector&lt;int&gt; &arr, int n)
+            {
+               for (int i = 0; i < n - 1; ++i)
+               {
+                  bool swapped = false;
+                  for (int j = 0; j < n - i - 1; ++j)
+                  {
+                     if (arr[j] > arr[j+1]) //check if adjacent element is
+                                  //not in order
+                     {
+                        swap(arr[j], arr[j + 1]);
+                        swapped = true;
+                     }
+                  }
+                  // Value at n-i-1 will be maximum of all the values below this index.
+                  if(!swapped)
+                     break;
+               }
+            }
+
+            int main()
+            {
+               vector&lt;int&lt; arr = {5, 6, 2, 6, 9, 0, -1};
+               int n = 7;
+
+               BubbleSort(arr, n);
+
+               // Display the sorted data.
+               cout << "\nSorted Data: ";
+               for (i = 0; i < n; i++)
+                    Cout << arr[i] << “ “;
+
+               return 0;
+            }
+          </code></pre>
+            <p>Code of project 1.</p>
+        </div>
+        <div class="projects__item">
+          <h3>Проект "Сортировка МЕГАКРУТАЯ"</h3>
+          <img
+            src="images/project2.jpg"
+            alt="Пример проекта 2"
+            class="projects__image"
+          />
+          <p>Insertion sort is the sorting mechanism where the sorted array is built having one item at a time.
+            The array elements are compared with each other sequentially and then arranged simultaneously in some particular order.
+            The analogy can be understood from the style we arrange a deck of cards.
+            This sort works on the principle of inserting an element at a particular position, hence the name Insertion Sort.</p>
+          <div class="code-example">
+             <pre><code>
+            SelectionSort(Arr[], arr_size):
+        FOR i from 1 to arr_size:
+            min_index = FindMinIndex(Arr, i, arr_size)
+
+            IF i != min_index:
+                swap(Arr[i], Arr[min_index])
+            END of IF
+        END of FOR
+          </code></pre>
+            <p>Code of project 2.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2 class="contact__title">Контакты</h2>
+        <form class="contact__form">
+          <label for="name">Имя:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="contact__input"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="contact__input"
+            required
+          />
+
+          <label for="message">Сообщение:</label>
+          <textarea
+            id="message"
+            name="message"
+            class="contact__textarea"
+            required
+          ></textarea>
+
+          <button type="submit" class="contact__button">Отправить</button>
+        </form>
+      </section>
+        <section id="table__example" class="table__example">
+            <table>
+                <thead>
+                <tr>
+                    <th>Заголовок 1</th>
+                    <th>Заголовок 2</th>
+                    <th>Заголовок 3</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Заголовок 1">Ячейка 1</td>
+                    <td data-label="Заголовок 2">Ячейка 2</td>
+                    <td data-label="Заголовок 3">Ячейка 3</td>
+                </tr>
+                <tr>
+                    <td data-label="Заголовок 1">Ячейка 4</td>
+                    <td data-label="Заголовок 2">Ячейка 5</td>
+                    <td data-label="Заголовок 3">Ячейка 6</td>
+                </tr>
+                <tr>
+                    <td data-label="Заголовок 1">Ячейка 7</td>
+                    <td data-label="Заголовок 2">Ячейка 8</td>
+                    <td data-label="Заголовок 3">Ячейка 9</td>
+                </tr>
+                <tr>
+                    <td data-label="Заголовок 1">Ячейка 10</td>
+                    <td data-label="Заголовок 2">Ячейка 11</td>
+                    <td data-label="Заголовок 3">Ячейка 12</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <article class="ascll-container">
+        <div class="ascll-block">
+          _   _      _ _        __        __         _     _ _
+          | | | | ___| | | ___   \ \      / /__  _ __| | __| | |
+          | |_| |/ _ \ | |/ _ \   \ \ /\ / / _ \| '__| |/ _` | |
+          |  _  |  __/ | | (_) |   \ V  V / (_) | |  | | (_| |_|
+          |_| |_|\___|_|_|\___/     \_/\_/ \___/|_|  |_|\__,_(_)
+        </div>
+        <div class="ascll-block">
+          _   _      _ _        __        __         _     _ _
+          | | | | ___| | | ___   \ \      / /__  _ __| | __| | |
+          | |_| |/ _ \ | |/ _ \   \ \ /\ / / _ \| '__| |/ _` | |
+          |  _  |  __/ | | (_) |   \ V  V / (_) | |  | | (_| |_|
+          |_| |_|\___|_|_|\___/     \_/\_/ \___/|_|  |_|\__,_(_)
+        </div>
+        </article>
+
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024. Все права защищены.</p>
+    </footer>
+  </body>
+</html>
